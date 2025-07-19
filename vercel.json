@@ -1,6 +1,14 @@
 {
   "cleanUrls": false,
-  "rewrites": [],
+  "rewrites": [
+    { "source": "/prices", "destination": "/prices.html" },
+    { "source": "/client", "destination": "/client.html" },
+    { "source": "/register", "destination": "/register.html" },
+    { "source": "/imprint", "destination": "/imprint.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/", "destination": "/index.html" }
+  ],
   "redirects": [],
   "headers": []
 }
