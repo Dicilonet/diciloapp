@@ -11,14 +11,14 @@ i18next
     fallbackLng: 'de',
     debug: false,
     interpolation: {
-      escapeValue: false, // react already safes from xss
+      escapeValue: false,
     },
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
     },
     backend: {
-      loadPath: './locales/{{lng}}/translation.json',
+      loadPath: '/locales/{{lng}}/translation.json', // <- FIX: esto ahora apunta a /public/locales
     }
   });
 
