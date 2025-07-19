@@ -1,6 +1,6 @@
-// vercel.json
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
+  "trailingSlash": false,
   "rewrites": [
     { "source": "/prices", "destination": "/prices.html" },
     { "source": "/client", "destination": "/client.html" },
