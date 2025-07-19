@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    base: './', // ← CLAVE para que .html funcionen en Vercel
+    base: '', // ← para URLs limpias y Vercel. No pongas './'
 
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -18,10 +18,12 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': resolve(__dirname, '.'),
-      }
+      },
     },
 
     build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
       rollupOptions: {
         input: {
           main: resolve(__dirname, 'index.html'),
@@ -32,6 +34,12 @@ export default defineConfig(({ mode }) => {
           privacy: resolve(__dirname, 'privacy.html'),
           contact: resolve(__dirname, 'contact.html'),
         }
+      }
+    },
+
+    server: {
+      fs: {
+        allow: ['.']
       }
     }
   };
